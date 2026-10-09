@@ -1,0 +1,54 @@
+{
+  "name": "dsh-amoled-proxyapi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AMOLED theme family (8 accents) and a ProxyAPI balance readout for the DeepSeek Harness web GUI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyutsu/dsh-amoled-proxyapi.git"
+  },
+  "homepage": "https://github.com/zyutsu/dsh-amoled-proxyapi#readme",
+  "bugs": {
+    "url": "https://github.com/zyutsu/dsh-amoled-proxyapi/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-bundle",
+    "deepseek-harness",
+    "theme",
+    "amoled",
+    "proxyapi"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.0"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml"
+  ],
+  "scripts": {
+    "build": "node build/build-client.mjs",
+    "test": "node build/test-host.mjs && node build/build-client.mjs && node build/test-client.mjs"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}

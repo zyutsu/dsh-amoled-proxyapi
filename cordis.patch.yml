@@ -1,0 +1,6 @@
+# Bundle layer for dsh-amoled-proxyapi: one Loader entry whose Host half serves
+# the balance route and whose browser half (declared by `dsh.client`) registers
+# the AMOLED theme, its General-settings switch, and the sidebar balance pill.
+- insert:
+    - id: amoled-proxyapi
+      name: 'dsh-amoled-proxyapi'

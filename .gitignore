@@ -1,0 +1,13 @@
+# Dependencies are never committed; a DSH bundle is installed by the profile's
+# package manager, which resolves this package itself.
+node_modules/
+
+# Build and test scratch
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# lib/ IS committed on purpose: the Host serves lib/client.js straight to the
+# page and lib/index.js is the Loader entry, so a freshly cloned bundle works
+# without a build step.

@@ -1,0 +1,7 @@
+# The plugin ships as text on both platforms; keep the working tree LF so the
+# generated bundle is byte-identical wherever it was built.
+* text=auto eol=lf
+
+# The generated browser bundle is a build artifact with its own byte-exact
+# revision hash in the Host's module graph: never let a checkout rewrite it.
+lib/client.js -text
